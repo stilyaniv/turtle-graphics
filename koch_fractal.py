@@ -36,11 +36,15 @@ def koch_snowflake_iterator(size=500, order_start=0, order_end=6):
         t.reset()
 
 def main():
-    size = int(argv[1])
-    order_start = int(argv[2])
-    order_end = int(argv[3])
+    try:
+        size = int(argv[1])
+        order_start = int(argv[2])
+        order_end = int(argv[3])
+    except:
+        pass
     
-    koch_snowflake_iterator(size, order_start, order_end)
+    #koch_snowflake_iterator(size, order_start, order_end)
+    koch_snowflake_iterator(size)
     t.done()
 
 if  __name__ == '__main__':
