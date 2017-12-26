@@ -9,14 +9,10 @@ def koch_curve(size, order):
     if order == 0:
         t.forward(size)
     else:
-        koch_curve(size/3, order-1)
-        t.left(60)
-        koch_curve(size/3, order-1)
-        t.right(120)
-        koch_curve(size/3, order-1)
-        t.left(60)
-        koch_curve(size/3, order-1)
- 
+        for rot in [60,-120,60,0]:
+            koch_curve(size/3, order-1)
+            t.left(rot)
+         
 def koch_snowflake(size, order):
     #t.speed(0)
     t.tracer(0, 0)
